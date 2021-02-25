@@ -34,11 +34,12 @@ chmod 755 "${BIN_DIR}/rofi_run.sh"
 echo polybar && \
 cp -p polybar/bar.sh "${BIN_DIR}/bar.sh" && \
 chmod 755 "${BIN_DIR}/bar.sh" && \
+mkdir -p "${CONF_DIR}/polybar"
 cp -p polybar/config "${CONF_DIR}/polybar/config"
 
 # github notification token
 echo "Creating file with token for github module"
-mkdir "${HOME}/.secrets/" -m 750 && \
+mkdir -p "${HOME}/.secrets/" -m 750 && \
 touch "${GITHUB_NOTIFICATION_TOKEN_FILE}" && \
 chmod 640 "${GITHUB_NOTIFICATION_TOKEN_FILE}"
 
