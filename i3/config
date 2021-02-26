@@ -51,25 +51,25 @@ bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86MonBrightnessUp exec light -A 5
 
 # drun
-bindsym $mod+d exec --no-startup-id rofi_run.sh -d
+bindsym $mod+d exec --no-startup-id ~/bin/rofi_run.sh -d
 
 # clipmenu
 # bindsym $alt+v exec --no-startup-id ~/bin/rofi.sh -l
 
 # calc
-bindsym $mod+c exec --no-startup-id rofi_run.sh -c
+bindsym $mod+c exec --no-startup-id ~/bin/rofi_run.sh -c
 
 # NetworkManager
-bindsym $mod+n exec --no-startup-id rofi_run.sh -n
+bindsym $mod+n exec --no-startup-id ~/bin/rofi_run.sh -n
 
 # Power-menu
-bindsym $mod+p exec --no-startup-id rofi_run.sh -p
+bindsym $mod+p exec --no-startup-id ~/bin/rofi_run.sh -p
 
 # print screen
 # bindsym Print exec --no-startup-id  ~/bin/rofi.sh -s
 
 # emoji picker
-# bindsym $mod+m exec --no-startup-id rofi_run.sh -e
+# bindsym $mod+m exec --no-startup-id ~/bin/rofi_run.sh -e
 
 # change focus
 bindsym $mod+j focus left
