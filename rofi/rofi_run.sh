@@ -20,14 +20,14 @@ power() {
 	ACTION_LIST="lock\nsuspend\nlogout\nreboot\nshutdown"
 
 	_rofi() {
-		rofi -dmenu -i -sync -p "sys" -width 115 -lines 5
+		rofi -dmenu -i -sync -p "sys" -len 60 -lines 5
 	}
 
 	SELECTED_STRING=$(echo -e "$ACTION_LIST" | _rofi)
 	if [ "$SELECTED_STRING" == "lock" ]; then
-		betterlockscreen -l dim -t "Don't touch my machine!"
+		betterlockscreen -l dim
 	elif [ "$SELECTED_STRING" == "suspend" ]; then
-		betterlockscreen -s dim -t "Don't touch my machine!"
+		betterlockscreen -l dim --off 15
 	elif [ "$SELECTED_STRING" == "logout" ]; then
 		i3-msg exit
 	elif [ "$SELECTED_STRING" == "reboot" ]; then
@@ -62,7 +62,7 @@ screenshot() {
 }
 
 emoji() {
-	rofimoji --rofi-args "-lines 20 -width 1344 -columns 2"
+	rofimoji --action clipboard 
 }
 
 usage() {
