@@ -1,0 +1,10 @@
+anydesk-bin
+betterlockscreen
+circumflex
+jetbrains-toolbox
+outline-client-appimage
+slack-desktop
+teams
+ttf-material-design-icons
+wps-office
+zoom
