@@ -30,13 +30,10 @@ bottom = false
 ; override-redirect = true
 
 ; Fonts
-font-0 = "FiraGO:size=11;2"
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;2"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;2"
-font-3 = "Font Awesome 5 Brands:pixelsize=12;2"
-font-4 = "Material Design Icons:pixelsize=13;3"
-font-5 = "FuraCode Nerd Font:pixelsize=13;3"
-font-6 = "JoyPixels:scale=10:pixelsize=11;3"
+font-0 = "Font Awesome 6 Free:style=Solid:pixelsize=12;2"
+font-1 = "Font Awesome 6 Free:style=Regular:pixelsize=12;2"
+font-2 = "Font Awesome 6 Brands:pixelsize=12;2"
+font-3 = "FiraCode Nerd Font:pixelsize=13;3"
 
 ; Colors
 background = ${colors.background}
@@ -54,7 +51,7 @@ tray-background = ${colors.background}
 ; Modules
 modules-left = wlan cpu memory keyboard
 modules-center = i3
-modules-right = github pulseaudio backlight date time battery
+modules-right = pulseaudio backlight date time battery
 
 
 [module/wlan]
@@ -85,18 +82,18 @@ label-layout = %{T3}%{T-} %layout%
 [module/i3]
 type = internal/i3
 
-ws-icon-0 = 1;%{T0}%{T-}
-ws-icon-1 = 2;%{T4}%{T-}
-ws-icon-2 = 3;%{T0}%{T-}
-ws-icon-3 = 4;%{T2}%{T-}
-ws-icon-4 = 5;%{T0}%{T-}
-ws-icon-5 = 6;%{T4}%{T-}
-ws-icon-6 = 7;%{T5}%{T-}
-ws-icon-7 = 8;%{T0}%{T-}
-ws-icon-8 = 9;%{T0}%{T-}
-ws-icon-9 = 10;%{T4}%{T-}
+ws-icon-0 = 1;%{T3}%{T-}
+ws-icon-1 = 2;%{T3}%{T-}
+ws-icon-2 = 3;%{T3}%{T-}
+ws-icon-3 = 4;%{T3}%{T-}
+ws-icon-4 = 5;%{T3}%{T-}
+ws-icon-5 = 6;%{T3}%{T-}
+ws-icon-6 = 7;%{T3}%{T-}
+ws-icon-7 = 8;%{T3}%{T-}
+ws-icon-8 = 9;%{T3}%{T-}
+ws-icon-9 = 10;%{T3}%{T-}
 pin-workspaces = true
-enable-scroll = true
+enable-scroll = false
 
 format = <label-state> <label-mode>
 
@@ -119,43 +116,35 @@ label-urgent = %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
-[module/github]
-type = internal/github
-token = ${file:~/.secrets/github-notification.token}
-empty-notifications = false
-interval = 30
-format = <label>
-label = %{T5}󰊤%{T-} %notifications%
-
 [module/battery]
 type = internal/battery
 
 battery = BAT0
 adapter = AC1
 
-format-discharging = %{T5}<ramp-capacity>%{T-}<label-discharging>
-format-charging = %{T5}<animation-charging>%{T-}<label-charging>
-format-full = %{T5}<ramp-capacity>%{T-}<label-full>
+format-discharging = %{T4}<ramp-capacity>%{T-} <label-discharging>
+format-charging = %{T4}<animation-charging>%{T-} <label-charging>
+format-full = %{T4}<ramp-capacity>%{T-} <label-full>
 
-ramp-capacity-0 = 󰂎
-ramp-capacity-1 = 󰁺
-ramp-capacity-2 = 󰁻
-ramp-capacity-3 = 󰁼
-ramp-capacity-4 = 󰁽
-ramp-capacity-5 = 󰁾
-ramp-capacity-6 = 󰁿
-ramp-capacity-7 = 󰂀
-ramp-capacity-8 = 󰂁
-ramp-capacity-9 = 󰂂
-ramp-capacity-10 = 󰁹
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-10 = 
 
-animation-charging-0 = 󰂆
-animation-charging-1 = 󰂇
-animation-charging-2 = 󰂈
-animation-charging-3 = 󰂉
-animation-charging-4 = 󰂊
-animation-charging-5 = 󰂋
-animation-charging-6 = 󰂅
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
 
 [module/backlight]
 type = internal/backlight
