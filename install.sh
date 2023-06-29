@@ -96,6 +96,7 @@ echo ranger \
 && python -m pip install pillow ranger-fm \
 && mkdir -p "${CONFDIR}/ranger" \
 && cp -p "${BASEDIR}/ranger/rc.conf" "${CONFDIR}/ranger/rc.conf"
+&& cp -p "${BASEDIR}/ranger/scope.sh" "${CONFDIR}/ranger/scope.sh"
 
 fi
 
