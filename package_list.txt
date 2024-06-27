@@ -88,11 +88,11 @@ pacman
 pacman-contrib
 patch
 perf
+pipewire
+pipewire-alsa
+pipewire-pulse
 pkgconf
 polybar
-pulseaudio
-pulseaudio-bluetooth
-pulseaudio-jack
 pyenv
 python
 python-pip
@@ -137,6 +137,7 @@ w3m
 wget
 which
 whois
+wireplumber
 wireshark-cli
 wireshark-qt
 xbitmaps
