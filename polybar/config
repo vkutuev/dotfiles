@@ -1,19 +1,16 @@
-; vim:ft=cfg
 ; POLYBAR CONFIG
 
 [colors]
-background = ${xrdb:background:#222}
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+background = #282A2E
+background-alt = #373B41
+foreground = #C5C8C6
+primary = #F0C674
+secondary = #8ABEB7
+alert = #A54242
+disabled = #707880
+
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
-
 ; Dimensions
 width = 100%
 height = 22
@@ -26,14 +23,10 @@ border-left-size = 0
 
 ; Location
 bottom = false
-; wm-restack = i3
-; override-redirect = true
 
 ; Fonts
-font-0 = "Font Awesome 6 Free:style=Solid:pixelsize=12;2"
-font-1 = "Font Awesome 6 Free:style=Regular:pixelsize=12;2"
-font-2 = "Font Awesome 6 Brands:pixelsize=12;2"
-font-3 = "FiraCode Nerd Font:pixelsize=13;3"
+font-0 = "Noto Sans:style=Solid:pixelsize=13;2" ; Regular text
+font-1 = "Symbols Nerd Font:style=Regular:pixelsize=13;2" ; Icons
 
 ; Colors
 background = ${colors.background}
@@ -58,40 +51,39 @@ modules-right = pulseaudio backlight date time battery
 type = internal/network
 interface = wlp2s0
 
-;label-connected = %{A1:~/bin/rofi.sh -n:}%{T5}󰤨%{T-} %essid%%{A}
-;label-disconnected = %{A1:~/bin/rofi.sh -n:}%{T5}󰤮%{T-} Not Connected%{A}
-
 
 [module/cpu]
 type = internal/cpu
-label = %{T2}%{T-} %percentage%%
+label = %{T2}󰘚%{T-} %percentage%%
 
 
 [module/memory]
 type = internal/memory
-label = %{T2}%{T-} %gb_used%
+label = %{T2}󰍛%{T-} %gb_used%
 interval = 3
+
 
 [module/keyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 blacklist-1 = scroll lock
 
-label-layout = %{T3}%{T-} %layout%
+label-layout = %{T2}%{T-} %layout%
+
 
 [module/i3]
 type = internal/i3
 
-ws-icon-0 = 1;%{T3}%{T-}
-ws-icon-1 = 2;%{T3}%{T-}
-ws-icon-2 = 3;%{T3}%{T-}
-ws-icon-3 = 4;%{T3}%{T-}
-ws-icon-4 = 5;%{T3}%{T-}
-ws-icon-5 = 6;%{T3}%{T-}
-ws-icon-6 = 7;%{T3}%{T-}
-ws-icon-7 = 8;%{T3}%{T-}
-ws-icon-8 = 9;%{T3}%{T-}
-ws-icon-9 = 10;%{T3}%{T-}
+ws-icon-0 = 1;%{T2}󰊌%{T-}
+ws-icon-1 = 2;%{T2}󰈹%{T-}
+ws-icon-2 = 3;%{T2}󱆃%{T-}
+ws-icon-3 = 4;%{T2}󰈮%{T-}
+ws-icon-4 = 5;%{T2}󰻏%{T-}
+ws-icon-5 = 6;%{T2}󰉋%{T-}
+ws-icon-6 = 7;%{T2}󰝚%{T-}
+ws-icon-7 = 8;%{T2}󰂯%{T-}
+ws-icon-8 = 9;%{T2}󱍢%{T-}
+ws-icon-9 = 10;%{T2}󰖷%{T-}
 pin-workspaces = true
 enable-scroll = false
 
@@ -116,71 +108,78 @@ label-urgent = %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
-[module/battery]
-type = internal/battery
-
-battery = BAT0
-adapter = AC1
-
-format-discharging = %{T4}<ramp-capacity>%{T-} <label-discharging>
-format-charging = %{T4}<animation-charging>%{T-} <label-charging>
-format-full = %{T4}<ramp-capacity>%{T-} <label-full>
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
-ramp-capacity-9 = 
-ramp-capacity-10 = 
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-5 = 
-animation-charging-6 = 
 
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
 
 format-spacing = 1
-format = %{T5}<ramp>%{T-}<label>
+format = %{T2}<ramp>%{T-}<label>
 label = %percentage%%
 
-ramp-0 = ⚬
-ramp-1 = 🔅
-ramp-2 = 🔆
+ramp-0 = 󱩎
+ramp-1 = 󱩏
+ramp-2 = 󱩐
+ramp-3 = 󱩑
+ramp-4 = 󱩒
+ramp-5 = 󱩓
+ramp-6 = 󱩔
+ramp-7 = 󱩕
+ramp-8 = 󱩖
 
 [module/pulseaudio]
 type = internal/pulseaudio
-format-volume = %{T4}<ramp-volume>%{T-} <label-volume>
-label-muted = 🔇 muted
+format-volume = %{T2}<ramp-volume>%{T-} <label-volume>
+label-muted = 󰖁 muted
 label-muted-foreground = #666
-ramp-volume-0 = 🔈
-ramp-volume-1 = 🔉
-ramp-volume-2 = 🔊
+ramp-volume-0 = 󰕿
+ramp-volume-1 = 󰖀
+ramp-volume-2 = 󰕾
 click-right = pavucontrol &
 
 [module/date]
 type = internal/date
-date = %{A1:~/bin/polybar-scripts/popup-calendar.sh --popup &:}%{T5}󰸗%{T-}%e %B%{A}
+date = %{A1:~/bin/polybar-scripts/popup-calendar.sh --popup &:}%{T2}󰃶%{T-}%e %B%{A}
 label = %date%
 
 
 [module/time]
 type = internal/date
 interval = 1.0
-date = %{A1:~/bin/polybar-scripts/popup-calendar.sh --popup &:}%{T5}%{T-} %H:%M%{A}
+date = %{A1:~/bin/polybar-scripts/popup-calendar.sh --popup &:}%{T2}%{T-} %H:%M%{A}
 
 
-;[module/popup-calendar]
-;type = custom/script
-;interval = 60
-; exec = ~/bin/polybar-scripts/popup-calendar.sh
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = AC1
+
+format-discharging = %{T2}<ramp-capacity>%{T-} <label-discharging>
+format-charging = %{T2}<animation-charging>%{T-} <label-charging>
+format-full = %{T2}<ramp-capacity>%{T-} <label-full>
+
+ramp-capacity-0 = 󰂎
+ramp-capacity-1 = 󰁺
+ramp-capacity-2 = 󰁻
+ramp-capacity-3 = 󰁼
+ramp-capacity-4 = 󰁽
+ramp-capacity-5 = 󰁾
+ramp-capacity-6 = 󰁿
+ramp-capacity-7 = 󰂀
+ramp-capacity-8 = 󰂁
+ramp-capacity-9 = 󰂂
+ramp-capacity-10 = 󰁹
+
+animation-charging-0 = 󰂆
+animation-charging-1 = 󰂇
+animation-charging-2 = 󰂈
+animation-charging-3 = 󰂉
+animation-charging-4 = 󰂊
+animation-charging-5 = 󰂋
+animation-charging-6 = 󰂅
+
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
